@@ -10,6 +10,7 @@ RUN apt-get update -y && \
 
 RUN apt-get install -y llvm-${LLVM_VERSION} git 
 
+# https://tvm.apache.org/docs/install/from_source.html#developers-get-source-from-github
 RUN git clone --recursive https://github.com/apache/tvm tvm
 WORKDIR /tvm
 RUN git checkout -b ${TVM_VERSION}
