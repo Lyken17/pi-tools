@@ -24,7 +24,7 @@ RUN cd build && \
 
 # Some Dev Tools
 RUN apt-get install -y vim python3-pip
-RUN pip3 install numpy decorator attrs tornado
+RUN pip3 install numpy decorator attrs tornado cloudpickle
 
 # Add to Python PATH
 RUN echo "export TVM_HOME=/tvm" >> ~/.bashrc && \
