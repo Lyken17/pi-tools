@@ -32,6 +32,6 @@ SHELL ["/bin/bash", "-c"]
 # RUN echo "export TVM_HOME=/tvm" >> ~/.bashrc && \
 #     echo "export PYTHONPATH=\$TVM_HOME/python:\$PYTHONPATH" >> ~/.bashrc && \
 #     source ~/.bashrc
-RUN cd python && python3 setup.py install
+RUN cd python &&  python3 setup.py install
 
 
