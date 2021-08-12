@@ -22,4 +22,15 @@ RUN cd build && \
     cmake .. && \
     make -j4
 
+# Some Dev Tools
+RUN apt-get install -y vim python3-pip
+RUN pip3 install numpy decorator attrs tornado
 
+# Add to Python PATH
+RUN echo "export TVM_HOME=/tvm" >> ~/.bashrc && \
+    echo "export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}" >> ~/.bashrc
+    
+
+
+
+   
