@@ -23,14 +23,15 @@ RUN cd build && \
     make -j4
 
 # Some Dev Tools
-RUN apt-get install -y vim python3-pip
+RUN apt-get update -y && \
+    apt-get install -y vim python3-pip
 RUN pip3 install numpy decorator attrs tornado cloudpickle
 
+SHELL ["/bin/bash", "-c"]
 # Add to Python PATH
-RUN echo "export TVM_HOME=/tvm" >> ~/.bashrc && \
-    echo "export PYTHONPATH=$TVM_HOME/python:${PYTHONPATH}" >> ~/.bashrc
-    
+# RUN echo "export TVM_HOME=/tvm" >> ~/.bashrc && \
+#     echo "export PYTHONPATH=\$TVM_HOME/python:\$PYTHONPATH" >> ~/.bashrc && \
+#     source ~/.bashrc
+RUN cd python && python3 setup.py install
 
 
-
-   
