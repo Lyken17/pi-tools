@@ -15,4 +15,13 @@ Referenced from [How To Install Docker and Docker-Compose On Raspberry Pi](https
 2. `curl -sSL https://get.docker.com | sh`
 3. `sudo usermod -aG docker ${USER}`
 
+## Quickly launch tvm tracker on Pi4
+
+```bash
+BASE=lyken/pi-tools:pi4-v0.8.0-5140d90
+docker pull $BASE
+docker run -it --rm \
+    $BASE \
+    /bin/python3 -m tvm.exec.rpc_server --tracker=<host-ip>:<host-port> --key rasp4b
+```
 
