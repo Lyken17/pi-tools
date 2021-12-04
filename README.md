@@ -18,7 +18,7 @@ Referenced from [How To Install Docker and Docker-Compose On Raspberry Pi](https
 ## Quickly launch tvm tracker on Pi4
 
 ```bash
-BASE=lyken/pi-tools:pi4-v0.8.0-5140d90
+BASE=lyken/pi-tools:pi4-v0.8.0-4c1b66f
 docker pull $BASE
 docker run -it --rm \
     $BASE \
