@@ -19,8 +19,8 @@ Referenced from [How To Install Docker and Docker-Compose On Raspberry Pi](https
 
 ```bash
 BASE=lyken/pi-tools:pi4-v0.8.0-4c1b66f
-docker pull $BASE
-docker run -it --rm \
+sudo docker pull $BASE
+sudo docker run -it --rm \
     --net host \
     $BASE \
     /bin/python3 -m tvm.exec.rpc_server --tracker=g1.mit.edu:9190 --key rasp4b
