@@ -8,8 +8,13 @@ RUN apt-get update -y && \
 ARG LLVM_VERSION=9
 RUN apt-get install -y llvm-${LLVM_VERSION} git  
 
-ARG TVM_VERSION=v0.7.0
-RUN git clone --recursive https://github.com/apache/tvm tvm
+# Some Dev Tools
+RUN apt-get update -y && \
+    apt-get install -y vim python3-pip
+
+ARG TVM_VERSION=v0.8.0
+ARG GIT_URL=https://github.com/apache/tvm
+RUN git clone --recursive ${GIT_URL} tvm
 WORKDIR /tvm
 RUN git checkout -b ${TVM_VERSION}
 
@@ -24,9 +29,6 @@ RUN cd build && \
     cmake .. && \
     make -j$(nproc)
 
-# Some Dev Tools
-RUN apt-get update -y && \
-    apt-get install -y vim python3-pip
 RUN pip3 install numpy decorator attrs tornado cloudpickle
 
 # Add to Python PATH
