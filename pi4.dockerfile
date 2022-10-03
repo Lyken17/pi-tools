@@ -14,6 +14,7 @@ RUN apt-get update -y && \
 
 ARG TVM_VERSION=v0.8.0
 ARG GIT_URL=https://github.com/apache/tvm
+RUN
 RUN git clone --recursive ${GIT_URL} tvm
 WORKDIR /tvm
 RUN git checkout -b ${TVM_VERSION}

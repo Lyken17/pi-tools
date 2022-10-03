@@ -1,7 +1,7 @@
 #/bin/bash
 
 export TVM_VERSION=5140d90;
-export TARGET=lyken/pi-tools:pi4-${TVM_VERSION}
+export TARGET=lyken/pi-tools:relax-pi4-${TVM_VERSION}
 
 docker build . -f pi4.dockerfile -t \
     $TARGET \
